@@ -1,0 +1,47 @@
+<html>
+    <head>
+        <title>
+            Project C78
+        </title>
+
+        <link rel="stylesheet" href="style.css" type="text/css">
+
+    </head>
+    <body>
+        <center style="margin-top: 40px;">
+            <h1>
+                My Family Book
+            </h1>
+
+            <img src="https://i.postimg.cc/MKdhy06Z/family.jpg" id="family_member_image" width="150px" height="200px">
+            <h4 id="family_member_name"></h4>
+            <button onclick="update();">Next<button>
+           <!-- Debug the above code to create a button with onclick functionality as given below-->
+            <!-- <button onclick="update();">Next</button>  -->
+          
+        </center>
+
+        <script>
+            var images = ["https://i.postimg.cc/MKdhy06Z/family.jpg","https://lh3.googleusercontent.com/MKWAmjcweRgSmY5fgqiLpjRGCTXNLPe6BWInUpuhBYoGWnR7iGkohYOw0UJM5QpDwsuw4Bf96beDma618xZMxUmoLHG-SkB8Ymg1tlFg9qmmuCpr9Kt6PSQLJMWHB6l-qwMRZVzfKC23iNA8vnGD1GMMrZw9Bt9E5mz7mEMsVWrZSmnqxSmgvMZOYMDzBclp5YJc5NcGzG-9tj-ZDa7u6w4swkGyBnVpplGrQ2BjJLPWJqJqR3kEVT-DUM7huTxrpskdKQ1GPwJCUklQVWYFBDMQcw1qRJn3paZmc-UUNqYMI_7F8dyOQuyC9z-VqU0lzrvq34vOSmRC4WYsZiSQf8l-cAtUq2DjsYM7m5sICHoT0b1SykHoQWQhlY0y0Q6HiAcTEeVOmU5AElYTc7nmi52I9t-QaJJscZDn3C1SZzE--ad6AWosvfY5_J-c-tNxNj0g5rUjwrcLoL9nbfX5gn6pQYLYTnqKtlMApVa0CBmsG8-eoSSJP6EDUaybUG6FYEzvufXwTTB3HiPiWPsu_YCknA0iJAFsep4FOvy9Wv0QsEIytaiVgFr6JzTxFfO4STTxiz-zUfygoNJE1RtJA_rxi0qI0iZ7kpihWy6VMg9fxolDMcxVNGZExXH_-yaX4SDU15yTMS4YcmAz-60mfTT-Ci_RxhjYuzosHLWzGkZlsaSUrYTnOymBb9rmCxHOcZOT5WV5uPVwK23Rs6u6_e-UuwD62i61TCb7n3Z99_E1LYqvOUNKCqzbgz4=w629-h943-no?authuser=0","https://lh3.googleusercontent.com/1OAqyT_Jstr4wqi49qDOHUTaoavTrANOVcZeZkXaddV3M3dBvu7cUtSd_DQB25fwi8iGdtijwBvQHAJpQuov2OgJCR7nfFvkwYacIMaAn3U95q_aHJGPyYlt6OyLhlVIhMcQWDvU_FlOJghnrhO6UEYWk6wsXAStWTtZmjblxWFpLwnhAZEPC0301cIQdZdmv__1iHkjtlylRJ191SlFxojHAWplo-HSp6ZuSZHnUlpOhxEoJWpCVAN-z7kj323ZODx0mq2EiWCAcJu6LAsn919i-R8P65FZn1NxeXoC9Dw83VW6DLbFw3U6RGXjT_JYvUgb6yimah2zthb1nydYUd0CKeKqQAq-m4jTyBJIo_ZehKKOdr1V6CqXwVVP_t25ATF3YB-ytA00ebAnwa9BsbX_IoY3n0CevGmLOHdC_h5M47tY2T68itkPJYAB77-5G_HHdSNUiEO26KNC9hxJbsEN8hH_P1qPqNG4sHv7ED2SGmaVb6_K06AXmeUo3vHeSvNoLRyJtj2iTex5MgJ3oFLas0zbR2mMK56HlZgyE-B_t09Dk_mobMRW2g_PsxK9ESUl-umAQiDxgy3Tn9svMRd9i-DRD-HexHM5FryKUEZk9rpEoMyL_4jmYww4xU6AJQ40ToLpylT39BUFeNJbOazDuSvGA3n6qGMK3Q8etuKSi5LbHmy5HeXcrNi67AlYksQM5mHbKyj0gy3nC5EoqfCrL4eY4NkYKF6YUgQOeNiETGg296ZHecxvcw=w629-h943-no?authuser=0","https://lh3.googleusercontent.com/7yR2mOVjyNw1d8QTOELGap7SToZr0oG1rtPz-VPn1gd5UYi6oW5wA_HJ6lmtRM4b7tqGRrFJ8a9ONvpuoxcQQ6ucJaIyatB1OavunHZWXMowo7AAlDd2GmHUEOStklmwxEJEQKnvl9okfmbGhQfVndfLTWDRyHCajzi2CAO7WM9-BzTSZamFN-GbtH_6e_iADMh_UA20c2dW0kbvzDRZLFjIGFdzyTaO5ss5fcaul19UKqfZJP2ClDYrDxdKYJh8jiHhqTo17BVTv1BXZQ9CTzzgtWLm-9noadcLkkUnUKSzQ6U02A7HO4GHfa1xIiAvSaZj0QpqK7K9U-eLE3FqUn4IpIyEwfvubDplWKkR0LVEIjAY_GUpHvXfnFeHfWCXY55TADVZxvjKDtevawECnhgwq6AohR1TB2H3ja92vMsfKwm4OV7Eev8xmQnQMvyN0OyS5dv22ABRvT0UWIHakHcamdOCjiHWDYvhmm8ksR7l8DUIPY9AbSqK-m2VqhbTyG2qcCsA0yhN6wFdqyZqgqiWrhMiHCWgM4Z10qXQkXbWDnZxtSqSdL4WL_eNJRFU5M1G3sBJtvybeksBtPntt7N30LMy9scZAuLZV8Uh_xCTx965TuG4ey2q9tjCv7CT0vEYWknJKi6G7DHUu6CjrJ3GGlIvB0sO_r9fKBWoCYrb7-_S4LeMmbtBYn6VKSJVHLiONW2kFD9b49NuSzU3LNIH40XpqZ0k6ngbOCOeWf4orp-fZhQ2VCL-zQ=w629-h943-no?authuser=0","https://lh3.googleusercontent.com/OcmHwukI4MKoKooSr6uiaxaxnMQVMsuzlqfP7lpAXB_T7q1X49sr9oXsjiPL-HCVUcwIrjGYdImxIkORaghNRW4Rq1VT5XCuLcvCBCru-mkU135d89HGeY1XmysR6h4ukGalnJqXtTple8IGvx1EuXxEvvVFjYVgneqKYW88xgLM0X5rtTXUE5o6pKAh9UF0dXKPT74k21RXiNSyYt5_ErQxCzao-CsHic9iBIa1LCC2QDIm9tKjZ_tETqafv5SqSRJCeYGdr_KkfNRNtGFlFgifBczFXF_xXPlGEeElonN9bbwUO6k7I-zHNBMLvuSNGO8z8zUfV4ZTzEM0GGSxAEhxp7fFWUSY2pvRD6FP0rMmT-rLYF3MPBptHugVRK8Hak3sUsFXlMc6Lkz5Cgsf24F0t4VFgY0DT-ISp9_XvvuRygV8Uj2X1SHK55Y4c7G4Mn7xKYJvxB9s_zq1SjDU977FoF_i57pPajSHk_HqsO0_6QqrtY7FMxvHI49MVIRvfgrACFdluiUoUbq7n-djrsIbQBjo4XRhPnKs6yWSi3G6KI4H5nRiCaCYOrJqeoPNeePsW7BBZ2r4q3IKOplZwznrXFzK9jCaLqblv3kbQTGd8Qz4I42jPfHadUVfMzkmQN8SpJkxwoEzCGagNojv0X9CMLmWliaL7pk5LVBhPxeL9vKeI3ZuLE8M7IIcJrahHFTckY97pkGs5p7MHrMLzGeRyFkQKpZKFU47IqvXawgfIhFnV5kDRpPEpic=w629-h943-no?authuser=0"];
+var names = ["Family Book","Bheesham", "Krish", "Kanishka", "Geeta",];
+var i = 0;
+function update()
+{
+    i++;
+    var numbers_of_family_member_in_array = 5
+    if(i > numbers_of_family_member_in_array)
+      {
+          i = 0;
+      }
+    
+    //Debug the code to store list of images in updatedImage. Use images[i]
+    var updatedImage = images[i];
+    //Debug the code to store list of names in updatedName. Use names[i]
+    var updatedName = names[i];
+ 
+    document.getElementById("family_member_image").src = updatedImage;
+    document.getElementById("family_member_name").innerHTML = updatedName;
+}
+</script>
+    </body>
+</html>
